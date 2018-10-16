@@ -19,11 +19,11 @@ algoritmo minicalculadora
       sino
 		  si (opcion = 3) entonces
 			  num_mul = num_a * num_b
-			  Escribir "La multiplicacion de", num_a," y de ", num_b,"es de ",num_res
+			  Escribir "La multiplicacion de", num_a," y de ", num_b,"es de ",num_mul
 		  sino
 			  si (opcion = 4) entonces
-				  num_mul = num_a / num_b
-				  Escribir "La division de", num_a," y de ", num_b,"es de ",num_res
+				  num_div = num_a / num_b
+				  Escribir "La division de", num_a," y de ", num_b,"es de ",num_div
 			  sino
 				  Escribir "Operacion no permitida"
 		finsi
