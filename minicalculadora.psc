@@ -6,7 +6,7 @@ algoritmo minicalculadora
   leer num_a
   Escribir "Introducir numero b"
   leer num_b
-  Escribir "Introducir 1(suma), 2(resta), 3(multiplicacion)"
+  Escribir "Introducir 1(suma), 2(resta), 3(multiplicacion), 4(division)"
   leer opcion
   
   si (opcion =1) entonces
@@ -21,9 +21,14 @@ algoritmo minicalculadora
 			  num_mul = num_a * num_b
 			  Escribir "La multiplicacion de", num_a," y de ", num_b,"es de ",num_res
 		  sino
-			Escribir "Operacion no permitida"
+			  si (opcion = 4) entonces
+				  num_mul = num_a / num_b
+				  Escribir "La division de", num_a," y de ", num_b,"es de ",num_res
+			  sino
+				  Escribir "Operacion no permitida"
 		finsi
-			finsi
+	finsi
+		finsi
  finsi
 finAlgoritmo
 
