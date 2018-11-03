@@ -55,39 +55,52 @@ FinSubProceso
 
 
 Algoritmo principal 
-	Definir a,b,c, teclado Como Entero
-	menu
-	leer teclado
-	Si teclado = 6 Entonces
-		Escribir "Introduce el valor A"
-		leer a
-		Escribir "Introduce el valor B"
-		leer b
-		Escribir "Introduce el valor C"
-		leer c
-	SiNo
-		Escribir "Introduce el valor A"
-		leer a
-		Escribir "Introduce el valor B"
-		leer b
-	Fin Si
-	Segun teclado Hacer
-		1:
-			resultado <- suma(a,b)
-		2:
-			resultado <- resta (a,b)
-		3:
-			resultado <- multiplicacion (a,b)
-		4: 
-			resultado <- division (a,b)
-		5:
-			resultado <- resultado <- primergrado (a,b)
-		6:
-			resultado <- segundogrado (a,b,c)
-		De Otro Modo:
-			Escribir "Debes introducir una opción válida"
-	Fin Segun
+	Definir a,b,c, teclado, bucle Como Entero
+	bucle <- 1
+	Mientras bucle = 1 Hacer
+		menu
+		leer teclado
+		Limpiar Pantalla
+		Si teclado = 6 Entonces
+			Escribir "Introduce el valor A"
+			leer a
+			Escribir "Introduce el valor B"
+			leer b
+			Escribir "Introduce el valor C"
+			leer c
+		SiNo
+			Escribir "Introduce el valor A"
+			leer a
+			Escribir "Introduce el valor B"
+			leer b
+		Fin Si
+		Segun teclado Hacer
+			1:
+				resultado <- suma(a,b)
+			2:
+				resultado <- resta (a,b)
+			3:
+				resultado <- multiplicacion (a,b)
+			4: 
+				resultado <- division (a,b)
+			5:
+				resultado <- resultado <- primergrado (a,b)
+			6:
+				resultado <- segundogrado (a,b,c)
+			De Otro Modo:
+				Escribir "Debes introducir una opción válida"
+		FinSegun
+		
+		Escribir "======= Selecciona una opción ========"
+		Escribir "| ¿Desea realizar otra operación?    |"
+		Escribir "| 1 - Si                             |"
+		Escribir "| 2 - No                             |"
+		Escribir "======================================"
+		leer bucle
+		Borrar Pantalla
+		
+	Fin Mientras
 	
-FinAlgoritmo
 
 	
+FinAlgoritmo
