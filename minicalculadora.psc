@@ -1,35 +1,93 @@
-algoritmo minicalculadora
-  Definir num_a, num_b, num_res como Real
-  Definir opcion como Entero
-  
-  Escribir "Introducir numero a"
-  leer num_a
-  Escribir "Introducir numero b"
-  leer num_b
-  Escribir "Introducir 1(suma), 2(resta), 3(multiplicacion), 4(division)"
-  leer opcion
-  
-  si (opcion =1) entonces
-		num_res = num_a + num_b
-		Escribir "La suma de ", num_a," y de ", num_b," es de ",num_res
-  sino
-      si (opcion = 2) entonces
-			num_res = num_a - num_b
-			Escribir "La resta de ", num_a," y de ", num_b," es de ",num_res
-      sino
-		  si (opcion = 3) entonces
-			  num_mul = num_a * num_b
-			  Escribir "La multiplicacion de", num_a," y de ", num_b,"es de ",num_mul
-		  sino
-			  si (opcion = 4) entonces
-				  num_div = num_a / num_b
-				  Escribir "La division de", num_a," y de ", num_b,"es de ",num_div
-			  sino
-				  Escribir "Operacion no permitida"
-		finsi
-	finsi
-		finsi
- finsi
-finAlgoritmo
+SubProceso menu
+	Escribir "======= Selecciona una opción ========"
+	Escribir "| 1 - Suma                           |"
+	Escribir "| 2 - Resta                          |"
+	Escribir "| 3 - Multiplicacion                 |"
+	Escribir "| 4 - Division                       |"
+	Escribir "| 5 - Ecuacion 1º Grado              |"
+	Escribir "| 6 - Ecuacion 2º Grado              |"
+	Escribir "======================================"
+FinSubProceso
 
-  
+SubProceso resultado <- suma(a,b)
+	resultado <- a + b
+	Escribir "La suma es " resultado
+FinSubProceso
+
+SubProceso resultado <- resta (a,b)
+	resultado <- a - b
+	Escribir "La resta es " resultado;
+FinSubProceso
+
+SubProceso resultado <- multiplicacion (a,b)
+	resultado <- a * b
+	Escribir "La multiplicacion es " resultado;
+FinSubProceso
+
+SubProceso resultado <- division (a,b)
+	resultado <- a / b
+	Escribir "La division es " resultado;
+FinSubProceso
+
+SubProceso resultado <- primergrado (a,b)
+	resultado <- -b / a
+	Escribir "La X vale " resultado;
+FinSubProceso
+
+SubProceso resultado <- segundogrado (a,b,c)
+	
+	cuenta = (b^2 - 4 * a * c)
+	
+	Si cuenta >= 0 Entonces
+		ra_iz = raiz (cuenta)
+		Si a = 0 Entonces
+			Escribir "No se puede dividir entre 0"
+		SiNo
+			x1 = (-b + ra_iz) / (2 * a) 
+			x2 = (-b - ra_iz) / (2 * a)
+			Escribir "Los resultados son: " x1 " y " x2
+		Fin Si
+	SiNo
+		Escribir "No se puede hacer la raiz de un negativo"
+	Fin Si
+FinSubProceso
+
+
+
+Algoritmo principal 
+	Definir a,b,c, teclado Como Entero
+	menu
+	leer teclado
+	Si teclado = 6 Entonces
+		Escribir "Introduce el valor A"
+		leer a
+		Escribir "Introduce el valor B"
+		leer b
+		Escribir "Introduce el valor C"
+		leer c
+	SiNo
+		Escribir "Introduce el valor A"
+		leer a
+		Escribir "Introduce el valor B"
+		leer b
+	Fin Si
+	Segun teclado Hacer
+		1:
+			resultado <- suma(a,b)
+		2:
+			resultado <- resta (a,b)
+		3:
+			resultado <- multiplicacion (a,b)
+		4: 
+			resultado <- division (a,b)
+		5:
+			resultado <- resultado <- primergrado (a,b)
+		6:
+			resultado <- segundogrado (a,b,c)
+		De Otro Modo:
+			Escribir "Debes introducir una opción válida"
+	Fin Segun
+	
+FinAlgoritmo
+
+	
